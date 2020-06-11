@@ -34,7 +34,7 @@ const ContactPage = ({data}) => {
           <h1>Get in touch</h1>
         </section>
 
-        <form name="contact" method="POST" data-netlify="true" ntreetlify-honeypot="bot-field">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <p className="large">My name is {nameField} and I have a {projectField} that needs help. You can reach me at {contactField} to get things started.</p>
           <p class="hidden">
             <label>Don’t fill this out if you're human: <input aria-label="Bot Field" name="bot-field" /></label>
