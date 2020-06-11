@@ -1,0 +1,36 @@
+.brand {
+    font-size: 1.75em;
+    font-variation-settings: 'wght' 550;
+    letter-spacing: .125px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+}
+
+header > div,
+header > nav {
+    width: 50%;
+}
+
+header > nav {
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+header > nav a {
+    color: var(--link-primary);
+    text-decoration: none;
+    transition: .3s all ease;
+}
+
+header > nav a:hover {
+    opacity: .5;
+}

@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter.otf");
+}
+
+:root {
+    --text-primary: hsla(0,0%,0%,1);
+    --text-secondary: hsla(0,0%,50%,1);
+    --bg-color: #fff;
+    --bg-faded: hsla(0,0%,90%,1);
+    --line-color: hsla(0,0%,90%,1);
+    --line-faded: hsla(0,0%,90%,1);
+    --link-primary: hsla(0,0%,0%,1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: hsla(0,0%,100%,1);
+        --text-secondary: hsla(0,0%,50%,1);
+        --bg-color: #201D1E;
+        --bg-faded: hsla(0,0%,5%,1);
+        --line-color: hsla(0,0%,40%,1);
+        --line-faded: hsla(0,0%,5%,1);
+        --link-primary: hsla(0,0%,100%,1);
+    }
+}
+
+body,
+html {
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: 3.5em;
+    font-variation-settings: 'wght' 500;
+    line-height: 1.2;
+    letter-spacing: -1.25px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-variation-settings: 'wght' 500;
+    letter-spacing: -.25px;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1.125em;
+    font-variation-settings: 'wght' 400;
+    line-height: 1.7;
+}
+
+p.large {
+    font-size: 1.5em;
+    line-height: 1.5;
+    
+}
+
+.teaser {
+    font-size: 1em;
+    font-variation-settings: 'wght' 450;
+    color: var(--text-secondary);
+    letter-spacing: -.25px;
+    margin: 0;
+}
+
+.teaser.large {
+    font-size: 1.75em;
+    font-variation-settings: 'wght' 550;
+    letter-spacing: -1px;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.link-primary {
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: .125em .25em;
+}
+
+.link-primary:after {
+    content: "";
+    mask-image: url("data:image/svg+xml; utf8, <svg fill=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z\" fill=\"currentColor\" /></svg>");
+    display: inline-block;
+    height: 1.125em;
+    width: 1.125em;
+    background-color: var(--text-primary);
+    transform: translateY(25%);
+    margin-left: .5em;
+    transition: .2s margin-left ease;
+}
+
+.link-primary:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.link-primary:hover:after {
+    margin-left: .75em;
+}

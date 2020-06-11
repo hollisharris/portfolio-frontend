@@ -1,0 +1,24 @@
+.hero {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.hero .hero-content .teaser {
+    margin: 0;
+    margin-bottom: .25em;
+}
+
+.hero .hero-content .headline {
+    margin: 0;
+    margin-bottom: .5em;
+}
+
+.home-hero {
+    height: 50vh;
+}
+
+.home-hero .hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
