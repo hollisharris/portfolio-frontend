@@ -39,6 +39,7 @@ const ContactPage = ({data}) => {
           <p class="hidden">
             <label>Don’t fill this out if you're human: <input aria-label="Bot Field" name="bot-field" /></label>
           </p>
+          <input type="hidden" name="form-name" value="contact" />
           <button type="submit" aria-label="Send Info" className="link-primary  ">Send Info</button>
         </form>
       </section>
