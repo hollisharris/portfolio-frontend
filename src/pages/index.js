@@ -16,7 +16,6 @@ export const query = graphql`
 
 const IndexPage = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
-  console.log(doc)
 
   return (
     <Layout>
