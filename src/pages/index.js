@@ -8,22 +8,14 @@ import HomeHero from "../components/Hero"
 
 export const query = graphql`
   {
-    allStrapiHome {
-      edges {
-        node {
-          hero_headline
-          hero_link_text
-          hero_link_url
-          hero_teaser
-          hero_description
-        }
-      }
+    storyblokEntry(slug: { eq: "home" }) {
+      content
     }
   }
 `
 
 const IndexPage = ({data}) => {
-  const doc = data.allStrapiHome.edges[0].node;
+  const doc = JSON.parse(data.storyblokEntry.content);
   console.log(doc)
 
   return (
@@ -35,7 +27,7 @@ const IndexPage = ({data}) => {
         headline: doc.hero_headline,
         description: doc.hero_description,
         linkText: doc.hero_link_text,
-        linkUrl: doc.hero_link_url
+        linkUrl: doc.hero_link_url.url
       }} />
 
       {/* <div className="container">
