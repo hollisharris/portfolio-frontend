@@ -26,14 +26,15 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-strapi",
+      resolve: 'gatsby-source-storyblok',
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
-        contentTypes: [],
-        singleTypes: ['home'],
-        queryLimit: 1000,
-      },
-    },
+        accessToken: 'hCipdN5yhp3skbCb0oxDZgtt',
+        homeSlug: 'home',
+        version: 'draft',
+        resolveLinks: 'story',
+        includeLinks: true
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
