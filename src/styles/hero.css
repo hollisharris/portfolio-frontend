@@ -14,11 +14,18 @@
 }
 
 .home-hero {
-    height: 50vh;
+    margin-top: 7em;
+    height: 100%;
 }
 
 .home-hero .hero-content {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+@media screen and (min-width: 1080px) {
+    .home-hero {
+        height: 50vh;
+    }
 }

@@ -20,7 +20,7 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title={doc.seo.title} description={doc.seo.description}/>
 
       <HomeHero data={{
         teaser: doc.hero_teaser,

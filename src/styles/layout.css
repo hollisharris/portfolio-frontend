@@ -1,6 +1,13 @@
 @font-face {
     font-family: "Inter";
-    src: url("../fonts/inter.otf");
+    font-style: normal;
+    src: url("../fonts/inter-roman.otf");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    src: url("../fonts/inter-italic.otf");
 }
 
 :root {
@@ -25,6 +32,8 @@
     }
 }
 
+/* Typography */
+
 body,
 html {
     font-family: "Inter", sans-serif;
@@ -33,10 +42,11 @@ html {
 }
 
 h1 {
-    font-size: 3.5em;
-    font-variation-settings: 'wght' 500;
+    font-size: 2.5em;
+    font-variation-settings: "wght" 550;
+    font-weight: 550;
     line-height: 1.2;
-    letter-spacing: -1.25px;
+    letter-spacing: -2px;
     margin: 0;
     padding: 0;
 }
@@ -70,10 +80,26 @@ p.large {
 }
 
 .teaser.large {
-    font-size: 1.75em;
-    font-variation-settings: 'wght' 550;
-    letter-spacing: -1px;
+    font-size: 1.5em;
+    font-variation-settings: 'wght' 525;
+    letter-spacing: -.75px;
 }
+
+
+@media screen and (min-width: 1080px) {
+    h1 {
+        font-size: 3.5em;
+        line-height: 1.2;
+        letter-spacing: -2px;
+    }
+
+    .teaser.large {
+        font-size: 1.75em;
+        letter-spacing: -.75px;
+    }
+}
+
+/* Global Layouts/Utilities */
 
 .container {
     max-width: 960px;
