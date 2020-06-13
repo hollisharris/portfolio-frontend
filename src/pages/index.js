@@ -30,10 +30,9 @@ const IndexPage = ({data}) => {
         linkUrl: doc.hero_link_url.url
       }} />
 
-      {/* <div className="container">
+      <div className="container">
         <h2>Featured Work</h2>
-        <p>I'm a designer, developer and educator who loves to take on something that has never been done before or take an outdated product and make it innovative.</p>
-      </div> */}
+      </div>
 
 
     </Layout>
