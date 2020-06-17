@@ -1,26 +1,31 @@
 import React from "react"
-import { Link } from "gatsby"
 import ReactMarkdown from "react-markdown"
+
+import LinkPrimary from '../LinkPrimary';
 
 import "../../styles/hero.css"
 
-const HomeHero = ({data}) => {
+const Hero = ({data}) => {
   const   teaser        = data.teaser,
           headline      = data.headline,
           description   = data.description,
           linkText      = data.linkText,
-          linkUrl       = data.linkUrl;
+          linkUrl       = data.linkUrl,
+          linkIcon      = data.linkIcon;
 
   return (
-    <section className="container hero home-hero">
+    <section className="hero">
+      <div className="container">
         <div className="hero-content">
-          {teaser && <p className="teaser large">{teaser}</p>}
+          {teaser && <p className="teaser">{teaser}</p>}
           {headline && <h1 className="headline">{headline}</h1>}
           {description && <div className="description"><ReactMarkdown source={description} /></div>}
-          {linkText && linkUrl && <Link className="link-primary" to={linkUrl}>{linkText}</Link>}
+          
+          {linkText && linkUrl && <LinkPrimary data={{path: linkUrl, text: linkText, icon: linkIcon}} />}
         </div>
+      </div>
     </section>
   )
 }
 
-export default HomeHero
+export default Hero

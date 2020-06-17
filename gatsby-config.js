@@ -31,8 +31,18 @@ module.exports = {
         accessToken: 'hCipdN5yhp3skbCb0oxDZgtt',
         homeSlug: 'home',
         version: 'draft',
-        resolveLinks: 'story',
+        resolveLinks: 'url',
         includeLinks: true
+      }
+    },
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        context: true
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

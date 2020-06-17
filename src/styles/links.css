@@ -1,0 +1,32 @@
+
+.link-primary {
+    text-decoration: none;
+    color: var(--interactive-primary);
+    padding: .75em .75em;
+    display: inline-flex;
+    border-radius: 0;
+    transition: .3s all ease;
+    background-color: transparent;
+    width: auto;
+    margin: 0 -.75em;
+    align-content: center;
+    letter-spacing: -.28px;
+}
+
+.link-primary.block {
+    width: 100%;
+}
+
+.link-primary [class^="fa-"] {
+    display: inline-block; 
+    transition: .3s all ease;
+    margin: 0 .75em 0 .5em;
+    align-self: center;
+    align-items: center;
+}
+
+.link-primary:hover {
+    cursor: pointer;
+    background-color: var(--interactive-faded);
+    border-radius: 8px;
+}

@@ -1,24 +1,107 @@
 .hero {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: calc(72px + 2.5em);
+}  
+
+.hero .hero-content {
+    padding: .3em 0;
 }
 
 .hero .hero-content .teaser {
     margin: 0;
-    margin-bottom: .25em;
+    margin-bottom: .5em;
 }
 
 .hero .hero-content .headline {
     margin: 0;
-    margin-bottom: .5em;
+    margin-bottom: .6em;
 }
 
-.home-hero {
-    margin-top: 0;
+.hero .description, 
+.hero .description p {
+    color: var(--text-body);
+    margin-bottom: 0.5em;
+}
+
+/* Home */
+
+.home .hero {
+    margin-bottom: 4em;
+}
+/* Case Study */
+
+.hero.case-study {
+    display: flex;
+    position: relative;
+    padding: 0;
+    height: 75vh;
+    margin-bottom: 72px;
+}
+
+.hero.case-study .headline, 
+.hero.case-study .teaser, 
+.hero.case-study .description,
+.hero.case-study .description p {
+    color: #fff;
+}
+
+.hero.case-study .hero-background {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.hero.case-study .hero-background .hero-overlay {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.hero.case-study .hero-background .hero-background-image {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    filter: saturate(80%);
+}
+
+.hero.case-study .container {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hero.case-study .hero-content {
+    width: 50%;
+}
+
+.hero.case-study .hero-foreground {
+    position: absolute;
+    width: 40%;
+    left: 60%;
+    height: 75vh;
+    top: 72px;
+}
+
+.hero.case-study .hero-foreground img {
+    display: block;
+    height:100%;
+    width:100%; 
+    object-fit: contain;
+    object-position: 4em 0;
 }
 
 @media all and (min-width: 1080px) {
-    .home-hero {
-        margin: 3em auto;
-    }
 }

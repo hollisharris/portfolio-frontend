@@ -14,7 +14,7 @@ import Header from "./header"
 import "../styles/normalize.css"
 import '../styles/layout.css'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, headerColor, className }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,9 +27,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} headerColor={headerColor} />
       <div>
-        <main>{children}</main>
+        <main className={className}>{children}</main>
         {/* <footer className="container">
           © {new Date().getFullYear()}, Built with
           {` `}

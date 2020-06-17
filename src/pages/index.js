@@ -1,10 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import HomeHero from "../components/Hero"
+import Hero from "../components/Hero"
+import WorkList from "../components/WorkList"
 
 export const query = graphql`
   {
@@ -19,19 +19,21 @@ const IndexPage = ({data}) => {
   console.log(doc)
 
   return (
-    <Layout>
+    <Layout className="home">
       <SEO title={doc.seo.title} description={doc.seo.description}/>
 
-      <HomeHero data={{
+      <Hero data={{
         teaser: doc.hero_teaser,
         headline: doc.hero_headline,
         description: doc.hero_description,
         linkText: doc.hero_link_text,
-        linkUrl: doc.hero_link_url.url
+        linkUrl: doc.hero_link_url.url,
+        linkIcon: doc.hero_link_icon
       }} />
 
       <div className="container">
-        <h2>Featured Work</h2>
+        <h2>{doc.featured_work_headline}</h2>
+        <WorkList data={doc.featured_work}/>
       </div>
 
 

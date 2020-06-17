@@ -1,2 +1,10 @@
-import HomeHero from './HomeHero'
-export default HomeHero
+import Hero from './Hero'
+import ImageOffset from './ImageOffset'
+import HeroCaseStudy from './HeroCaseStudy'
+
+export {
+    ImageOffset,
+    HeroCaseStudy
+}
+
+export default Hero;

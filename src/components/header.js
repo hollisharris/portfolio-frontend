@@ -1,20 +1,31 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import LinkPrimary from './LinkPrimary'
+
 import '../styles/header.css'
 
-const Header = () => (
-  <header className="container">
-    <div>
+const Header = ({headerColor}) => (
+  <header className={headerColor ? headerColor :''}>
+    <div className="container">
       <h1 className="brand">
         <Link to="/">
           hollis.
         </Link>
       </h1>
+      <nav>
+        <LinkPrimary data={{
+          path: "/case-studies",
+          text: "Case Studies",
+          showIcon: false
+        }}/>
+        <LinkPrimary data={{
+          path: "/contact",
+          text: "Contact",
+          showIcon: false
+        }}/>
+      </nav>
     </div>
-    <nav>
-      <Link to="/contact">Contact</Link>
-    </nav>
   </header>
 )
 
