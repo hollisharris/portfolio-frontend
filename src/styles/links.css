@@ -2,13 +2,12 @@
 .link-primary {
     text-decoration: none;
     color: var(--interactive-primary);
-    padding: .75em .75em;
+    padding: .75em 0em;
     display: inline-flex;
     border-radius: 0;
     transition: .3s all ease;
     background-color: transparent;
     width: auto;
-    margin: 0 -.75em;
     align-content: center;
     letter-spacing: -.28px;
 }
@@ -27,6 +26,7 @@
 
 .link-primary:hover {
     cursor: pointer;
+    padding: .75em .75em;
     background-color: var(--interactive-faded);
     border-radius: 8px;
 }

@@ -55,6 +55,7 @@ header nav a.link-primary:hover {
 header nav a.link-primary {
     text-decoration: none;
     transition: .3s all ease;
-    margin-left: 1em;
+    margin-left: .5em;
     color: var(--text-primary);
+    padding: .75em .75em;
 }

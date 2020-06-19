@@ -1,13 +1,16 @@
 @font-face {
     font-family: "Inter";
     font-style: normal;
+    src: url('../fonts/inter-roman.var.woff2') format("woff2-variations");
     src: url("../fonts/inter-roman.otf");
+    font-weight: 1 999;
 }
 
 @font-face {
     font-family: "Inter";
     font-style: italic;
     src: url("../fonts/inter-italic.otf");
+    font-weight: 1 999;
 }
 
 @font-face {
@@ -74,7 +77,7 @@ h1 {
 h2 {
     font-size: 1.75em;
     font-variation-settings: 'wght' 450;
-    letter-spacing: -.125px;
+    letter-spacing: -1px;
     margin: 0;
     padding: 0;
 }

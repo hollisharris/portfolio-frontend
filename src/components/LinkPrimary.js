@@ -14,10 +14,10 @@ const LinkPrimary = ({data}) => {
           icon = data.icon || "chevron-right",
           block = data.block;
 
-  let linkElement = <Link className={`link-primary ${block ? 'block' : null}`} to={path} aria-label={aria ? aria : text}>{showIcon != false ? <LinkIcon icon={icon}/> : null }{text}</Link>
+  let linkElement = <Link className={`link-primary ${block ? 'block' : null}`} to={path} aria-label={aria ? aria : text}>{showIcon !== false ? <LinkIcon icon={icon}/> : null }{text}</Link>
 
   if(url) {
-    linkElement = <a className={`link-primary ${block ? 'block' : null}`} href={url} aria-label={aria ? aria : text}>{showIcon != false ? <LinkIcon icon={icon}/> : null }{text}</a>
+    linkElement = <a className={`link-primary ${block ? 'block' : null}`} href={url} aria-label={aria ? aria : text}>{showIcon !== false ? <LinkIcon icon={icon}/> : null }{text}</a>
   }
   
   return linkElement

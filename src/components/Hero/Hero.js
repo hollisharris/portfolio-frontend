@@ -13,7 +13,7 @@ const Hero = ({data}) => {
           linkUrl       = data.linkUrl,
           linkIcon      = data.linkIcon,
           color         = data.color || '',
-          bgColor       = data.bgColor,
+          bgColor       = data.bgColor || 'transparent',
           offset        = data.offset || false;
 
   return (

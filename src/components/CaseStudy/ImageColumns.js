@@ -5,7 +5,7 @@ const ImageColumns = ({data}) => {
         return (
             <aside className="column">
                 <figure>
-                    <img src={column.image} />
+                    <img src={column.image} alt={column.alt}/>
                     {column.caption && <figcaption>{column.caption}</figcaption>}
                 </figure>
             </aside>

@@ -1,9 +1,8 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import { HomeHero } from "../components/Hero"
+import Hero from "../components/Hero"
 import WorkList from "../components/WorkList"
 
 export const query = graphql`
@@ -21,7 +20,6 @@ export const query = graphql`
 `
 
 const CaseStudyPage = ({data}) => {
-  console.log(data)
 
   const featuredWorkData = data.allStoryblokEntry.edges.map(item => {
     const content = JSON.parse(item.node.content);
@@ -37,15 +35,18 @@ const CaseStudyPage = ({data}) => {
 
   return (
     <Layout>
-      {/* <SEO title={doc.seo.title} description={doc.seo.description}/>
+      <SEO title={"Work"} description={"Case Studies"}/>
 
-      <HomeHero data={{
-        teaser: doc.hero_teaser,
-        headline: doc.hero_headline,
-        description: doc.hero_description,
-        linkText: doc.hero_link_text,
-        linkUrl: doc.hero_link_url.url
-      }} /> */}
+      <Hero data={{
+        // teaser: "Work",
+        headline: "Work",
+        // description: doc.hero_description,
+        // linkText: doc.hero_link_text,
+        // linkUrl: doc.hero_link_url.url,
+        // linkIcon: doc.hero_link_icon,
+        bgColor: '#fff'
+      }} />
+
 
       <div className="container">
         <WorkList data={featuredWorkData}/>
