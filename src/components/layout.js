@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { SkipNavLink, SkipNavContent } from "@reach/skip-nav"
+import "@reach/skip-nav/styles.css" //this will auto show and hide the link on focus
 
 import Header from "./header"
 
@@ -28,6 +30,7 @@ const Layout = ({ children, headerColor, className }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} headerColor={headerColor} />
+      <SkipNavContent />
       <div>
         <main className={className}>{children}</main>
         {/* <footer className="container">
