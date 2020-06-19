@@ -29,9 +29,10 @@ const Layout = ({ children, headerColor, className }) => {
 
   return (
     <>
+      <SkipNavLink />
       <Header siteTitle={data.site.siteMetadata.title} headerColor={headerColor} />
-      <SkipNavContent />
       <div>
+        <SkipNavContent />
         <main className={className}>{children}</main>
         {/* <footer className="container">
           © {new Date().getFullYear()}, Built with

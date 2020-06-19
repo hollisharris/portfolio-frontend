@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
 import LinkPrimary, { LinkIcon } from "../components/LinkPrimary"
+import { graphql } from 'gatsby'
 
 import "../styles/contact.css"
 
