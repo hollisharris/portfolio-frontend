@@ -11,10 +11,13 @@ const Hero = ({data}) => {
           description   = data.description,
           linkText      = data.linkText,
           linkUrl       = data.linkUrl,
-          linkIcon      = data.linkIcon;
+          linkIcon      = data.linkIcon,
+          color         = data.color || '',
+          bgColor       = data.bgColor,
+          offset        = data.offset || false;
 
   return (
-    <section className="hero">
+    <section className={`hero ${color} ${offset ? 'offset' : ''}`} style={{backgroundColor: bgColor }}>
       <div className="container">
         <div className="hero-content">
           {teaser && <p className="teaser">{teaser}</p>}

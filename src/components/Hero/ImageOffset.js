@@ -3,15 +3,12 @@ import React from "react"
 import "../../styles/hero.css"
 
 const ImageOffset = ({data}) => {
-  // const   teaser        = data.teaser,
-  //         headline      = data.headline,
-  //         description   = data.description,
-  //         linkText      = data.linkText,
-  //         linkUrl       = data.linkUrl;
+  const src     = data.src,
+        offset  = data.offset
 
   return (
-    <div className="image-offset">
-      
+    <div className={`image-offset ${offset ? 'offset' : ''}`} style={{backgroundImage: `url("${src}")`}}>
+      <span className="scroll-indicator"></span>
     </div>
   )
 }

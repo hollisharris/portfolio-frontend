@@ -4,26 +4,24 @@ import LinkPrimary from '../LinkPrimary'
 import '../../styles/work-list.css'
 
 const WorkList = ({data}) => {
-  // const   teaser        = data.teaser,
-  //         headline      = data.headline,
-  //         description   = data.description,
-  //         linkText      = data.linkText,
-  //         linkUrl       = data.linkUrl;
-  console.log(data)
 
   const workList = data.map(work => {
-    const content = work.relation.story.content
+
+    const   _uid     = work._uid,
+            teaser   = work.teaser,
+            headline = work.headline,
+            category = work.category,
+            fullSlug = work.fullSlug;
 
     return (
-      <div className="work-item" key={work._uid}>
-        <h3>{content.hero_teaser} | {content.category}</h3>
-        <p>{content.hero_headline}</p>
+      <div className="work-item" key={_uid}>
+        <h3>{teaser} | {category}</h3>
+        <p>{headline}</p>
         <LinkPrimary data={{
           text: "View Case Study",
-          path: work.relation.story.full_slug,
-          aria: `View the ${content.hero_teaser} Case Study`,
-          showIcon: true,
-          icon: content.home_link_icon
+          path: fullSlug,
+          aria: `View the ${teaser} Case Study`,
+          showIcon: false
         }}/>
       </div>
     )

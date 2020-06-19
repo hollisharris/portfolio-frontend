@@ -17,7 +17,6 @@
     "gatsby-plugin-offline": "^3.2.7",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.11",
-    "gatsby-source-cloudinary": "^0.1.14",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-source-storyblok": "^0.2.6",
     "gatsby-transformer-sharp": "^2.5.5",

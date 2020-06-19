@@ -6,17 +6,34 @@ import SEO from "../components/seo"
 import { HomeHero } from "../components/Hero"
 import WorkList from "../components/WorkList"
 
-// export const query = graphql`
-//   {
-//     storyblokEntry(slug: { eq: "home" }) {
-//       content
-//     }
-//   }
-// `
+export const query = graphql`
+  {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies\//"}}) {
+      edges {
+        node {
+          name
+          full_slug
+          content
+        }
+      }
+    }
+  }
+`
 
 const CaseStudyPage = ({data}) => {
-  // const doc = JSON.parse(data.storyblokEntry.content);
-  // console.log(doc)
+  console.log(data)
+
+  const featuredWorkData = data.allStoryblokEntry.edges.map(item => {
+    const content = JSON.parse(item.node.content);
+    return ({
+      _uid: content._uid,
+      teaser: content.hero_teaser,
+      headline: content.hero_headline,
+      category: content.category,
+      fullSlug: item.node.full_slug
+    })
+  })
+
 
   return (
     <Layout>
@@ -30,10 +47,9 @@ const CaseStudyPage = ({data}) => {
         linkUrl: doc.hero_link_url.url
       }} /> */}
 
-      {/* <div className="container">
-        <h2>{doc.featured_work_headline}</h2>
-        <WorkList data={doc.featured_work}/>
-      </div> */}
+      <div className="container">
+        <WorkList data={featuredWorkData}/>
+      </div>
 
 
     </Layout>

@@ -1,0 +1,13 @@
+.work-list {
+    padding-top: calc(72px + 2.5em);
+}  
+
+.home .work-list-header {
+    margin-top: 4em;
+}
+
+@media screen and (min-width: 1080px) {
+    .home .work-list-header {
+        margin-left: 8.333vw;
+    }
+}

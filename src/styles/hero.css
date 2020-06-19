@@ -27,6 +27,10 @@
 .home .hero {
     margin-bottom: 4em;
 }
+
+.hero.offset {
+    padding-bottom: 8em;
+}
 /* Case Study */
 
 .hero.case-study {
@@ -37,11 +41,23 @@
     margin-bottom: 72px;
 }
 
-.hero.case-study .headline, 
-.hero.case-study .teaser, 
-.hero.case-study .description,
-.hero.case-study .description p {
+.hero.light .headline,
+.hero.light .link-primary {
     color: #fff;
+}
+.hero.light .teaser, 
+.hero.light .description,
+.hero.light .description p {
+    color:hsla(0,0%,100%,.9);
+}
+
+.hero.light .link-primary {
+    font-variation-settings: "wght" 475;
+    font-weight: 475;
+}
+
+.hero.light .link-primary:hover {
+    background-color: rgba(255,255,255,.2)
 }
 
 .hero.case-study .hero-background {
@@ -84,7 +100,7 @@
     justify-content: flex-start;
 }
 .hero.case-study .hero-content {
-    width: 50%;
+    width: 70%;
 }
 
 .hero.case-study .hero-foreground {
@@ -100,8 +116,81 @@
     height:100%;
     width:100%; 
     object-fit: contain;
-    object-position: 4em 0;
+    object-position: 4em 18%;
 }
 
 @media all and (min-width: 1080px) {
+    .hero.case-study .hero-content {
+        width: 50%;
+    }
+}
+
+/* Image Offset */
+
+.image-offset {
+    height: 400px;
+    position: relative;
+    background-color: grey;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-left: 1em;
+    z-index: 2;
+}
+
+.image-offset.offset {
+    top: -8em;
+}
+
+.hero-offset .container {
+    margin-bottom: 4em;
+}
+
+@media all and (min-width: 960px) {
+    .image-offset {
+        left: calc((100vw - 960px) / 2 - .5em);
+        margin-right: calc((100vw - 960px) / 2 - .5em);
+        margin-left: 8.3333vw;
+        height: 70vh;
+        width: auto;
+    }
+
+    .image-offset .scroll-indicator {
+        display: block;
+        width: 1px;
+        height: 8em;
+        position: relative;
+        left: -8.3333vw;
+        overflow: hidden;
+    }
+
+    .image-offset .scroll-indicator:before {
+        content: "";
+        display: block;
+        width: 100%;
+        background-color: var(--line-color);
+        height: 75%;
+        position: absolute;
+        top: 0;
+        animation: scrollIndicator 1.5s ease-in-out infinite;
+    }
+
+}
+
+@keyframes scrollIndicator {
+    0% {
+        top: 0;
+        height: 0;
+        bottom: 0
+    }
+    50% {
+        height: 100%;
+        bottom: 0;
+        top: 0;
+    }
+    100% {
+        height: 0;
+        bottom: 0;
+        top: 100%;
+    }
 }

@@ -31,7 +31,7 @@ const HeroCaseStudy = ({data}) => {
   }
 
   return (
-    <section className=" hero case-study">
+    <section className=" hero case-study light">
       <div className="hero-background">
         <div className="hero-background-image" style={{backgroundImage: `url('${background}')`}}></div>
         <div className="hero-overlay" style={startColor && endColor && { backgroundImage: `linear-gradient(to right, ${hexToRgb(startColor, '1')} 30%, ${hexToRgb(startColor, '.7')} 70%, ${hexToRgb(endColor, '.3')} 100%`}}></div>

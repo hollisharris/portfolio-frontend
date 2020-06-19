@@ -1,7 +1,8 @@
 .brand {
     font-size: 1.75em;
-    font-variation-settings: 'wght' 550;
-    letter-spacing: .125px;
+    font-variation-settings: 'wght' 600;
+    font-weight: 600;
+    letter-spacing: -.28px;
 }
 
 .brand a {
@@ -21,6 +22,11 @@ header.light,
 header.light .brand a,
 header.light nav a.link-primary {
     color: #fff;
+}
+
+header.light nav a.link-primary {
+    font-variation-settings: "wght" 475;
+    font-weight: 475;
 }
 
 header.light nav a.link-primary:hover {

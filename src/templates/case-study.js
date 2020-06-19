@@ -2,8 +2,10 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ReactMarkdown from "react-markdown"
 
 import { HeroCaseStudy } from "../components/Hero"
+import { ImageColumns } from "../components/CaseStudy"
 
 import "../styles/case-study.css"
 
@@ -18,9 +20,22 @@ const CaseStudy = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
   console.log(doc)
 
+  const roles = doc.roles.map(role => {
+    return <li>{role}</li>
+  })
+
+  const pageContent = doc.components.map(component => {
+    switch(component.component) {
+      case 'image_columns':
+        return <ImageColumns data={component.column_group}/>
+      default:
+        return <div className="text-block"><ReactMarkdown source={component.content} /></div>;
+    }
+  })
+
   return (
     <Layout headerColor="light">
-      <SEO title={doc.seo.title} description={doc.seo.description}/>
+      <SEO title={doc.seo.title || doc.hero_teaser} description={doc.seo.description || doc.hero_headline}/>
 
       <HeroCaseStudy data={{
         teaser: doc.hero_teaser,
@@ -35,8 +50,16 @@ const CaseStudy = ({data}) => {
 
       <section className="case-study-content">
         <div className="container">
-          <h2>What I Did</h2>
+          <div className="roles">
+            <h2>What I Did</h2>
+            <ul>
+              {roles}
+            </ul>
+          </div>
+          {pageContent}
         </div>
+        
+        
       </section>
       
 

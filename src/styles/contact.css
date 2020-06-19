@@ -1,8 +1,3 @@
-.contact {
-    display: flex;
-    justify-content: space-between;
-}
-
 .contact form {
     width: 100%;
 }
@@ -46,6 +41,7 @@
 
 .contact-info ul {
     list-style: none;
+    padding: 0;
 }
 
 .contact-info ul li {
@@ -53,6 +49,11 @@
 }
 
 @media screen and (min-width: 1080px) {
+    .contact {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .contact form {
         width: 60%;
     }
