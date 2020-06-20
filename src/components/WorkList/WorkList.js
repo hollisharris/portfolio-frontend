@@ -1,28 +1,43 @@
 import React from "react"
-import LinkPrimary from '../LinkPrimary'
+import { Link } from 'gatsby'
 
 import '../../styles/work-list.css'
 
 const WorkList = ({data}) => {
 
-  const workList = data.map(work => {
+  const sizes = [
+    "landscape-4",
+    "portrait-4",
+    "portrait-3",
+    "landscape-6"
+  ]
 
-    const   _uid     = work._uid,
-            teaser   = work.teaser,
-            headline = work.headline,
-            category = work.category,
-            fullSlug = work.fullSlug;
+  const workList = data.map((work,index) => {
+
+    const   _uid        = work._uid,
+            teaser      = work.teaser,
+            headline    = work.headline,
+            category    = work.category,
+            fullSlug    = work.fullSlug,
+            foreground  = work.foreground,
+            background  = work.background;
+
+    let counter;
+    if(sizes[index]) {
+      counter = index
+    } else {
+      counter = 0
+    }
 
     return (
-      <div className="work-item" key={_uid}>
-        <h3>{teaser} | {category}</h3>
-        <p>{headline}</p>
-        <LinkPrimary data={{
-          text: "View Case Study",
-          path: fullSlug,
-          aria: `View the ${teaser} Case Study`,
-          showIcon: false
-        }}/>
+      <div className={`work-item ${sizes[counter]}`} key={_uid}>
+        <Link to={fullSlug}>
+          <div className="thumbnail"><img src={background} /></div>
+          <div className="content">
+            <h3>{teaser}<span className="category">{category}</span></h3>
+            <p>{headline}</p>
+          </div>
+        </Link>
       </div>
     )
   })

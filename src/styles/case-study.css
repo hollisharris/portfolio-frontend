@@ -15,6 +15,7 @@
     float: none;
     margin-top: 0;
     margin-bottom: 4em;
+    width: 11vw;
 }
 
 .roles h2 {
@@ -54,15 +55,23 @@
     width: 100%;
     flex: 0 1 auto;
     text-align: center;
+    margin: 0 .25em;
+}
+
+.image-columns .column:first-child {
+    margin-left: 0;
+}
+.image-columns .column:last-child {
+    margin-right: 0;
+}
+
+.image-columns figure {
+    margin: 0;
 }
 
 .image-columns img {
     width: 100%;
     flex: 0 1 auto;
-}
-
-.image-columns figure {
-    margin: 0 .5em;
 }
 
 .image-columns figcaption {
@@ -95,6 +104,10 @@
 
     .text-block {
         max-width: 620px;
+    }
+
+    .image-columns .column {
+        margin: 0 .5em;
     }
 }
 

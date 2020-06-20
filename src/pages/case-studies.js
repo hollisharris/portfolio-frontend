@@ -28,7 +28,9 @@ const CaseStudyPage = ({data}) => {
       teaser: content.hero_teaser,
       headline: content.hero_headline,
       category: content.category,
-      fullSlug: item.node.full_slug
+      fullSlug: item.node.full_slug,
+      foreground: content.hero_foreground_image.filename,
+      background: content.hero_background_image.filename
     })
   })
 

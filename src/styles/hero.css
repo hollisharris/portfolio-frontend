@@ -6,21 +6,44 @@
     padding: .3em 0;
 }
 
-.hero .hero-content .teaser {
+.teaser {
     margin: 0;
     margin-bottom: .5em;
 }
 
-.hero .hero-content .headline {
+.headline {
     margin: 0;
     margin-bottom: .6em;
 }
 
-.hero .description, 
-.hero .description p {
+.description, 
+.description p {
     color: var(--text-body);
     margin-bottom: 0.5em;
 }
+
+.light .headline {
+    color: #fff;
+}
+.light .teaser, 
+.light .description,
+.light .description p {
+    color:hsla(0,0%,100%,.9);
+}
+
+.light a.link-primary {
+    color: #fff;
+}
+
+.light a.link-primary {
+    font-variation-settings: "wght" 475;
+    font-weight: 475;
+}
+
+.light a.link-primary:hover {
+    background-color: rgba(255,255,255,.2)
+}
+
 
 /* Home */
 
@@ -39,25 +62,6 @@
     padding: 0;
     height: 75vh;
     margin-bottom: 72px;
-}
-
-.hero.light .headline,
-.hero.light .link-primary {
-    color: #fff;
-}
-.hero.light .teaser, 
-.hero.light .description,
-.hero.light .description p {
-    color:hsla(0,0%,100%,.9);
-}
-
-.hero.light .link-primary {
-    font-variation-settings: "wght" 475;
-    font-weight: 475;
-}
-
-.hero.light .link-primary:hover {
-    background-color: rgba(255,255,255,.2)
 }
 
 .hero.case-study .hero-background {
@@ -100,6 +104,7 @@
     justify-content: flex-start;
 }
 .hero.case-study .hero-content {
+    padding-top: 72px;
     width: 70%;
 }
 

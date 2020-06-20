@@ -1,0 +1,42 @@
+.next-case-study {
+    position: relative;
+}
+
+.offset-left {
+    position: relative;
+    margin-left: calc((100vw - 960px) / 2);
+    z-index: 1;
+    padding: 12em 0;
+}
+
+.next-case-study .container {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    margin-left: calc(11vw + 1em);
+    max-width: 720px;
+    padding-left: 0;
+}
+
+.next-case-study .container > .teaser {
+    /* width: 11vw; */
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.next-case-study:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4em;
+    left: calc((100vw - 960px) / -2 + .5em);
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-faded);
+}
+
+
+.next-case-study .next-content {
+    margin-left: 3em;
+}

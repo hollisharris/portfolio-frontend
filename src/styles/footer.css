@@ -1,0 +1,9 @@
+.contact-footer {
+    padding: 10em;
+    background-color: var(--bg-faded);
+    text-align: center;
+}
+
+.contact-footer.dark-bg {
+    background-color: var(--bg-dark);
+}

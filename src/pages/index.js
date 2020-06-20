@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero, { ImageOffset } from "../components/Hero"
 import WorkList from "../components/WorkList"
+import { ContactFooter } from "../components/Footer"
 
 export const query = graphql`
   {
@@ -15,6 +16,7 @@ export const query = graphql`
 
 const IndexPage = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
+  console.log(doc.featured_work)
 
   const featuredWorkData = doc.featured_work.map(item => {
     const story = item.relation.story
@@ -23,7 +25,9 @@ const IndexPage = ({data}) => {
       teaser: story.content.hero_teaser,
       headline: story.content.hero_headline,
       category: story.content.category,
-      fullSlug: story.full_slug
+      fullSlug: story.full_slug,
+      foreground: story.content.hero_foreground_image.filename,
+      background: story.content.hero_background_image.filename
     })
   })
 
@@ -50,6 +54,8 @@ const IndexPage = ({data}) => {
         <h2 className="work-list-header">{doc.featured_work_headline}</h2>
         <WorkList data={featuredWorkData}/>
       </div>
+
+      <ContactFooter dark="true" />
 
 
     </Layout>

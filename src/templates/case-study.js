@@ -5,7 +5,8 @@ import SEO from "../components/seo"
 import ReactMarkdown from "react-markdown"
 
 import { HeroCaseStudy } from "../components/Hero"
-import { ImageColumns } from "../components/CaseStudy"
+import { ImageColumns, NextCaseStudy } from "../components/CaseStudy"
+import { ContactFooter } from "../components/Footer"
 
 import "../styles/case-study.css"
 
@@ -13,6 +14,16 @@ export const query = graphql`
   query($full_slug: String!) {
     storyblokEntry(full_slug: {eq: $full_slug}) {
       content
+      position
+    },
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//"}}) {
+      edges {
+        node {
+          position
+          content
+          full_slug
+        }
+      }
     }
   }
 `
@@ -20,17 +31,30 @@ const CaseStudy = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
   console.log(doc)
 
-  const roles = doc.roles.map(role => {
-    return <li>{role}</li>
+  const roles = doc.roles.map((role, index) => {
+    return <li key={index} >{role}</li>
   })
 
   const pageContent = doc.components.map(component => {
     switch(component.component) {
       case 'image_columns':
-        return <ImageColumns data={component.column_group}/>
+        return <ImageColumns  key={component._uid} data={component.column_group}/>
       default:
-        return <div className="text-block"><ReactMarkdown source={component.content} /></div>;
+        return <div className="text-block" key={component._uid}><ReactMarkdown source={component.content} /></div>;
     }
+  })
+
+  const newAll = data.allStoryblokEntry.edges.map(item => {
+    const content = JSON.parse(item.node.content);
+    return ({
+      position: item.node.position,
+      teaser: content.hero_teaser,
+      headline: content.hero_headline,
+      category: content.category,
+      slug: item.node.full_slug,
+      startColor: content.hero_color_start ? content.hero_color_start.color : null,
+      endColor: content.hero_color_end ? content.hero_color_end.color : null
+    })
   })
 
   return (
@@ -58,11 +82,14 @@ const CaseStudy = ({data}) => {
           </div>
           {pageContent}
         </div>
-        
-        
       </section>
-      
 
+      <NextCaseStudy data={{
+        current: data.storyblokEntry.position,
+        all: newAll
+      }}/>
+
+      <ContactFooter />
 
     </Layout>
   )
