@@ -16,12 +16,13 @@ export const query = graphql`
       content
       position
     },
-    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//"}}) {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}}) {
       edges {
         node {
-          position
-          content
+          name
           full_slug
+          content
+          position
         }
       }
     }
@@ -29,7 +30,6 @@ export const query = graphql`
 `
 const CaseStudy = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
-  console.log(doc)
 
   const roles = doc.roles.map((role, index) => {
     return <li key={index} >{role}</li>
@@ -66,8 +66,8 @@ const CaseStudy = ({data}) => {
         category: doc.category,
         headline: doc.hero_headline,
         description: doc.hero_description,
-        foreground: doc.hero_foreground_image.filename,
-        background: doc.hero_background_image.filename,
+        foreground: doc.hero_foreground_image,
+        background: doc.hero_background_image,
         startColor: doc.hero_color_start ? doc.hero_color_start.color : null,
         endColor: doc.hero_color_end ? doc.hero_color_end.color : null
       }} />

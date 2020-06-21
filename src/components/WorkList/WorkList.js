@@ -32,7 +32,7 @@ const WorkList = ({data}) => {
     return (
       <div className={`work-item ${sizes[counter]}`} key={_uid}>
         <Link to={fullSlug}>
-          <div className="thumbnail"><img src={background} /></div>
+          <div className="thumbnail"><img src={background.filename} alt={background.alt} /></div>
           <div className="content">
             <h3>{teaser}<span className="category">{category}</span></h3>
             <p>{headline}</p>

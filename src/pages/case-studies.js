@@ -7,7 +7,7 @@ import WorkList from "../components/WorkList"
 
 export const query = graphql`
   {
-    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies\//"}}) {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}}) {
       edges {
         node {
           name
@@ -21,6 +21,8 @@ export const query = graphql`
 
 const CaseStudyPage = ({data}) => {
 
+  console.log(data)
+
   const featuredWorkData = data.allStoryblokEntry.edges.map(item => {
     const content = JSON.parse(item.node.content);
     return ({
@@ -29,8 +31,8 @@ const CaseStudyPage = ({data}) => {
       headline: content.hero_headline,
       category: content.category,
       fullSlug: item.node.full_slug,
-      foreground: content.hero_foreground_image.filename,
-      background: content.hero_background_image.filename
+      foreground: content.hero_foreground_image,
+      background: content.hero_background_image
     })
   })
 

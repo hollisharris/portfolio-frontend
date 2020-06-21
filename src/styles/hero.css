@@ -121,7 +121,7 @@
     height:100%;
     width:100%; 
     object-fit: contain;
-    object-position: 4em 18%;
+    object-position: left center;
 }
 
 @media all and (min-width: 1080px) {

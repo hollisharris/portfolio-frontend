@@ -14,10 +14,8 @@ const NextCaseStudy = ({data}) => {
     }
     
     if(handleCheck(current + 10) >= 0) {
-        // console.log(true)
         next = all[handleCheck(current + 10)]
     } else {
-        // console.log(false)
         next = all[0]
     }
 

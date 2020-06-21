@@ -16,7 +16,6 @@ export const query = graphql`
 
 const IndexPage = ({data}) => {
   const doc = JSON.parse(data.storyblokEntry.content);
-  console.log(doc.featured_work)
 
   const featuredWorkData = doc.featured_work.map(item => {
     const story = item.relation.story
@@ -26,8 +25,8 @@ const IndexPage = ({data}) => {
       headline: story.content.hero_headline,
       category: story.content.category,
       fullSlug: story.full_slug,
-      foreground: story.content.hero_foreground_image.filename,
-      background: story.content.hero_background_image.filename
+      foreground: story.content.hero_foreground_image,
+      background: story.content.hero_background_image
     })
   })
 

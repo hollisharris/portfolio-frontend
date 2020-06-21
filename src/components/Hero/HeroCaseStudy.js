@@ -30,10 +30,12 @@ const HeroCaseStudy = ({data}) => {
     }
   }
 
+  console.log(data)
+
   return (
     <section className="hero case-study light">
       <div className="hero-background">
-        <div className="hero-background-image" style={{backgroundImage: `url('${background}')`}}></div>
+        <div className="hero-background-image" style={{backgroundImage: `url('${background.filename}')`}}></div>
         <div className="hero-overlay" style={startColor && endColor && { backgroundImage: `linear-gradient(to right, ${hexToRgb(startColor, '1')} 30%, ${hexToRgb(startColor, '.7')} 70%, ${hexToRgb(endColor, '.3')} 100%`}}></div>
       </div>
       <div className="container">
@@ -45,7 +47,7 @@ const HeroCaseStudy = ({data}) => {
           {linkText && linkUrl && <LinkPrimary data={{path: linkUrl, text: linkText}} />}
         </div>
         <div className="hero-foreground" >
-          <img src={foreground} alt=""/>
+          <img src={foreground.filename} alt={foreground.alt}/>
         </div>
       </div>
     </section>
