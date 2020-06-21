@@ -54,7 +54,7 @@
 }
 
 .image-columns .column {
-    width: 100%;
+    width: 50%;
     flex: 0 1 auto;
     text-align: center;
     margin: 0 .25em;
@@ -99,6 +99,10 @@
         width: 11vw;
     }
 
+    .roles ul {
+        display: block;
+    }
+
     .roles ul li {
         margin-bottom: .75em;
         display: block;
@@ -109,6 +113,7 @@
     }
 
     .image-columns .column {
+        width: 100%;
         margin: 0 .5em;
     }
 }

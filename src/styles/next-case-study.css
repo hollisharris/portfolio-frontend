@@ -4,16 +4,16 @@
 
 .offset-left {
     position: relative;
-    margin-left: calc((100vw - 960px) / 2);
+    margin-left: 1em;
     z-index: 1;
-    padding: 12em 0;
+    padding: 8em 0;
 }
 
 .next-case-study .container {
     display: flex;
     align-items: flex-start;
     margin: 0;
-    margin-left: calc(11vw + 1em);
+    margin-left: 2em;
     max-width: 720px;
     padding-left: 0;
 }
@@ -39,4 +39,16 @@
 
 .next-case-study .next-content {
     margin-left: 3em;
+}
+
+@media screen and (min-width: 1080px) {
+    .offset-left {
+        margin-left: calc((100vw - 960px) / 2);
+        padding: 12em 0;
+    }
+
+    .next-case-study .container {
+        margin-left: calc(11vw + 1em);
+        max-width: 720px;
+    }
 }
