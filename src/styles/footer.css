@@ -1,9 +1,25 @@
 .contact-footer {
-    padding: 10em;
+    padding-top: 10em;
+    padding-bottom: 10em;
     background-color: var(--bg-faded);
     text-align: center;
 }
 
+.contact-footer .link-primary:hover {
+    background-color: var(--interactive-primary);
+    color: #fff;    
+}
+
+.contact-footer .link-primary {
+    color: var(--interactive-primary);
+}
+
 .contact-footer.dark-bg {
     background-color: var(--bg-dark);
+}
+
+@media screen and (min-width: 1080px) {
+    .contact-footer {
+        padding: 4em;
+    }
 }

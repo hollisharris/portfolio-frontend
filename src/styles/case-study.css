@@ -1,6 +1,6 @@
 .case-study-content {
-    margin-top: 4em;
-    margin-bottom: 4em;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .case-study-content p {
@@ -15,11 +15,10 @@
     float: none;
     margin-top: 0;
     margin-bottom: 4em;
-    width: 11vw;
+    
 }
 
 .roles h2 {
-    float: left;
     font-size: 1em;
     margin-right: 1.25em;
     letter-spacing: normal;
@@ -30,11 +29,13 @@
     padding: 0;
     font-size: 1em;
     color: var(--text-secondary);
+    display: flex;
+    width: 100%;
 }
 
 .roles ul li {
     margin-right: 1.25em;
-    display: inline-block;
+    flex: 0 1 auto;
 }
 
 /* Components  */
@@ -83,8 +84,7 @@
 
 @media all and (min-width: 1080px) {
     .case-study-content {
-        margin-top: 8em;
-        margin-bottom: 8em;
+        margin-bottom: 6em;
     }
 
     .roles h2 {
@@ -96,6 +96,7 @@
         float: left;
         margin-top: .7em;
         margin-bottom: 0;
+        width: 11vw;
     }
 
     .roles ul li {

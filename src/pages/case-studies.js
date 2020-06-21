@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,7 +8,7 @@ import WorkList from "../components/WorkList"
 
 export const query = graphql`
   {
-    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}}) {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}, field_hide_boolean: {ne: true}}) {
       edges {
         node {
           name
@@ -20,9 +21,6 @@ export const query = graphql`
 `
 
 const CaseStudyPage = ({data}) => {
-
-  console.log(data)
-
   const featuredWorkData = data.allStoryblokEntry.edges.map(item => {
     const content = JSON.parse(item.node.content);
     return ({

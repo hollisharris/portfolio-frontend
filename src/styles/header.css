@@ -54,3 +54,37 @@ header nav a.link-primary {
     color: var(--text-primary);
     padding: .75em .75em;
 }
+
+header.light:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: .3s top ease;
+}
+
+header.light:hover:before {
+    top: 0;
+}
+
+header.light:hover .brand a,
+header.light:hover nav a.link-primary {
+    color: var(--text-primary);
+    transition: .3s all .1s ease;
+}
+
+header.light:hover nav a.link-primary {
+    font-variation-settings: "wght" 400;
+    font-weight: 400;
+}
+
+header.light:hover nav a.link-primary:hover {
+    background-color: var(--bg-faded);
+}

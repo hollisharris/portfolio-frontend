@@ -60,8 +60,8 @@
     display: flex;
     position: relative;
     padding: 0;
-    height: 75vh;
-    margin-bottom: 72px;
+    height: calc(75vh + 72px);
+    overflow-x: hidden;
 }
 
 .hero.case-study .hero-background {
@@ -70,7 +70,7 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
+    bottom: 72px;
 }
 
 .hero.case-study .hero-background .hero-overlay {
@@ -104,16 +104,15 @@
     justify-content: flex-start;
 }
 .hero.case-study .hero-content {
-    padding-top: 72px;
-    width: 70%;
+    width: 50%;
 }
 
 .hero.case-study .hero-foreground {
     position: absolute;
-    width: 40%;
-    left: 60%;
-    height: 75vh;
-    top: 72px;
+    width: 100vw;
+    left: 60vw;
+    height: calc(75vh - 2em);;
+    top: calc(72px + 2em);
 }
 
 .hero.case-study .hero-foreground img {
@@ -140,6 +139,7 @@
     background-position: left center;
     background-repeat: no-repeat;
     margin-left: 1em;
+    width: calc(100% - 1em);
     z-index: 2;
 }
 

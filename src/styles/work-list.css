@@ -13,6 +13,7 @@
 
 .work-item {
     flex: 0 1 auto;
+    margin-bottom: 4em;
 }
 
 .work-item .thumbnail {
@@ -39,38 +40,54 @@
     object-fit: cover;
 }
 
-.landscape-4 {
-    width: 40%;
-}
-
-.landscape-6 {
-    width: 60%;
-    
+.landscape-4,
+.landscape-6,
+.portrait-3,
+.portrait-4 {
+    width: 100%;
 }
 
 .landscape-4 .thumbnail,
-.landscape-6 .thumbnail {
-    padding-top: calc(9 / 16 * 100%);
-}
-
-.portrait-3 {
-    width: 30%;
-    margin-top: -10em;
-}
-
-.portrait-4 {
-    width: 40%;
-}
-
+.landscape-6 .thumbnail,
 .portrait-3 .thumbnail,
 .portrait-4 .thumbnail {
-    padding-top: calc(4 / 3 * 100%);
+    padding-top: calc(9 / 16 * 100%);
 }
-
 
 @media screen and (min-width: 1080px) {
     .home .work-list-header {
         margin-left: 8.333vw;
+    }
+
+    .work-item {
+        margin-bottom: 0;
+    }
+
+    .landscape-4 {
+        width: 40%;
+    }
+    
+    .landscape-6 {
+        width: 60%;
+    }
+    
+    .portrait-3 {
+        width: 30%;
+        margin-top: -10em;
+    }
+    
+    .portrait-4 {
+        width: 40%;
+    }
+
+    .landscape-4 .thumbnail,
+    .landscape-6 .thumbnail {
+        padding-top: calc(9 / 16 * 100%);
+    }
+
+    .portrait-3 .thumbnail,
+    .portrait-4 .thumbnail {
+        padding-top: calc(4 / 3 * 100%);
     }
 }
 

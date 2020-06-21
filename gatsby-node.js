@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(
         `{
-            caseStudies: allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies\//"}}) {
+            caseStudies: allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}}) {
               edges {
                 node {
                   name

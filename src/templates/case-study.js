@@ -16,7 +16,7 @@ export const query = graphql`
       content
       position
     },
-    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}}) {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^case-studies//", ne: "case-studies/"}, field_hide_boolean: {ne: true}}) {
       edges {
         node {
           name

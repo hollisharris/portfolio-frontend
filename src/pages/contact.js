@@ -87,10 +87,8 @@ const ContactPage = ({data}) => {
       <section className="container contact">
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou">
           <p className="large">My name is {nameField} and I have a {projectField} that needs help. You can reach me at {emailField} to get things started.</p>
-          <p className="hidden">
-            <label>Don’t fill this out if you're human: <input aria-label="Bot Field" name="bot-field" /></label>
-          </p>
-          <input type="hidden" name="form-name" value="contact" />
+          <label className="hidden">Don’t fill this out if you're human: <input aria-label="Bot Field" name="bot-field" /></label>
+          <label className="hidden">form name: <input type="hidden" name="form-name" value="contact" /></label>
           <button type="submit" aria-label="Send Info" className="link-primary  "><LinkIcon icon={doc.send_link_icon}/> Send Info</button>
         </form>
 
